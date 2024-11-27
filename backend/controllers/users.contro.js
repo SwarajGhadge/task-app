@@ -12,7 +12,7 @@ export const register = async (req, res) => {
         message: "Please provide all fields",
       });
     }
-    // chekc user
+    // check user
     const exisiting = await User.findOne({ email });
     if (exisiting) {
       return res.status(500).json({
@@ -23,6 +23,7 @@ export const register = async (req, res) => {
     //hashing password
     var salt = bcrypt.genSaltSync(10);
     const hashedPassword = await bcrypt.hash(password, salt);
+    
     //create new user
     const user = await User.create({
       username,
@@ -64,19 +65,6 @@ export const login = async (req, res) => {
         message: "User Not Found",
       });
     }
-    //check user password  | compare password
-    // bcrypt.compare(password, user.password, (err, data) => {
-    //   if (data) {
-    //     const authClaims = [
-    //       { name: username },
-    //       { jti: jwt.sign({}, process.env.JWT_SECRET) },
-    //     ];
-    //     const token = jwt.sign({ authClaims }, JWT_SECRET, { expiresIn: "2d" });
-    //     res.status(200).json({ id: user._id, token: token });
-    //   } else {
-    //     return res.status(400).json({ message: "invalid" });
-    //   }
-    // });
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
