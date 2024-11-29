@@ -12,7 +12,7 @@ const CompletedTask = () => {
     try {
       const fetch = async () => {
         const response = await axios.get(
-          "http://localhost:4000/api/v2/completed-tasks",
+          "https://task-app-project-5fao.onrender.com/api/v2/completed-tasks",
           { headers }
         );
         setData(response.data.data);

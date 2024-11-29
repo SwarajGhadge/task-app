@@ -18,7 +18,7 @@ const EditTask = () => {
     try {
       const fetch = async () => {
         const response = await axios.get(
-          `http://localhost:4000/api/v2/edit-tasks/${id}`,
+          `https://task-app-project-5fao.onrender.com/api/v2/edit-tasks/${id}`,
           { headers }
         );
         const data = await response.data;
@@ -35,7 +35,7 @@ const EditTask = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:4000/api/v2/update-task/${id}`,
+        `https://task-app-project-5fao.onrender.com/api/v2/update-task/${id}`,
         { title: title, desc: desc },
         { headers }
       );

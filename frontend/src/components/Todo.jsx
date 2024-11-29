@@ -19,7 +19,7 @@ const Todo = ({ data }) => {
   const updateCompleted = async (id) => {
     try {
       await axios.put(
-        `http://localhost:4000/api/v2/updatecompleted-tasks/${id}`,
+        `https://task-app-project-5fao.onrender.com/api/v2/updatecompleted-tasks/${id}`,
         {},
         { headers }
       );
@@ -30,7 +30,7 @@ const Todo = ({ data }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/v2/delete-task/${id}`, {
+      await axios.delete(`https://task-app-project-5fao.onrender.com/api/v2/delete-task/${id}`, {
         headers,
       });
       toast.success("Deleted Successfully");

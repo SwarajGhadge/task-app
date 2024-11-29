@@ -17,7 +17,7 @@ const InputData = ({ inputDiv, setInput }) => {
     if (data.title === "" || data.desc === "") {
       toast.error("all fields required");
     } else {
-      await axios.post("http://localhost:4000/api/v2/create-task", data, {
+      await axios.post("https://task-app-project-5fao.onrender.com/api/v2/create-task", data, {
         headers,
       });
       setData({ title: "", desc: "" });

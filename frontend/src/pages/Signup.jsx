@@ -30,7 +30,7 @@ const Signup = () => {
         toast.error("Please enter a correct email address");
       } else {
         const response = await axios.post(
-          "http://localhost:4000/api/v1/signup",
+          "https://task-app-project-5fao.onrender.com/api/v1/signup",
           { username: username, email: email, password: password }
         );
         setUsername("");
