@@ -14,7 +14,7 @@ connectDB();
 
 const _dirname = path.resolve();
 const corsOptions = {
-  origin: "https://task-app-project-5fao.onrender.com/",
+  origin: "https://task-app-project-5fao.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOptions));
