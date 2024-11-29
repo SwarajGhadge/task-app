@@ -1,3 +1,5 @@
+import * as React from "react";
+import "../App.css";
 import axios from "axios";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import RemoveDoneIcon from "@mui/icons-material/RemoveDone";
@@ -8,11 +10,9 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../store/auth";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-//material ui
-import * as React from "react";
+//Material ui
 import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
@@ -22,7 +22,7 @@ import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 
 const Sidebar = () => {
-  //material ui
+  //Material ui
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -47,7 +47,6 @@ const Sidebar = () => {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -57,7 +56,7 @@ const Sidebar = () => {
     prevOpen.current = open;
   }, [open]);
 
-  //normal
+  //Normal
   const [data, setData] = useState();
 
   const navigate = useNavigate();
@@ -111,7 +110,7 @@ const Sidebar = () => {
               Completed Tasks
             </div>
           </Link>
-          <Link to="/incompleted-tasks" className="w-full">
+          <Link to="/incompleted-tasks" className="w-full active:bg-white">
             <div className="py-2 pl-2 w-full hover:bg-slate-100 hover:text-black transition ease-in-out ">
               <RemoveDoneIcon className="mr-4" />
               Incompleted Tasks
