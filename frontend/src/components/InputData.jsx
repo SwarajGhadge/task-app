@@ -22,7 +22,7 @@ const InputData = ({ inputDiv, setInput }) => {
       });
       setData({ title: "", desc: "" });
       setInput("hidden");
-      toast.success("Task created");
+      toast.success("Task created successfully");
     }
   };
 

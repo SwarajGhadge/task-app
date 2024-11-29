@@ -33,7 +33,7 @@ const Todo = ({ data }) => {
       await axios.delete(`https://task-app-project-5fao.onrender.com/api/v2/delete-task/${id}`, {
         headers,
       });
-      toast.success("Deleted Successfully");
+      toast.success("Task deleted Successfully");
     } catch (error) {
       toast.error(error.response.data.message);
     }

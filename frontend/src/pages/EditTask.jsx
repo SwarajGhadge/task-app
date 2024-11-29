@@ -23,7 +23,6 @@ const EditTask = () => {
         );
         const data = await response.data;
         setTitle(data.data.title);
-        // setTitle(data.title)
         setDesc(data.data.desc);
       };
       fetch();
@@ -42,7 +41,7 @@ const EditTask = () => {
       setTitle("");
       setDesc("");
       navigate("/");
-      toast.success("Task updated");
+      toast.success("Task updated Successfully");
     } catch (error) {
       toast.error("Internal server error");
     }
